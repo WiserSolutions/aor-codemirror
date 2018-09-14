@@ -1,0 +1,6 @@
+{
+  "extends": "@wisersolutions/eslint-config/quadro",
+  "rules": {
+    "no-console": "off"
+  }
+}
