@@ -9,31 +9,33 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/sql/sql'
 import 'codemirror/mode/javascript/javascript'
 
-const defaultOptions = {
-  lineNumbers: true,
-  lineWrapping: true
-}
-
-const CodeMirrorCore = props => {
-  const { input: { value, onChange }, meta: { valid, error }, type, label, defaultValue = '', required } = props
-  const { mode, format, parse, toString } = editorTypes[type]
-
+export const CodeMirrorCore = ({
+  input: { value, onChange },
+  meta: { valid, error },
+  type,
+  label,
+  defaultValue = '',
+  required
+}) => {
+  const { mode, format, parse, stringify } = editorTypes[type]
   return (
     <div>
       <span style={{ color: '#c4c4c4' }}>
         {label}
         {required ? ' * ' : ' '}
       </span>
-      <span style={{ color: '#ff3d3a' }}> {valid ? '' : `(${error})`}</span>
-      <Toolbar noGutter>
-        <ToolbarGroup>
-          <FlatButton disabled={format === null} label="Format" onClick={() => onChange(format(value))} />
-        </ToolbarGroup>
-      </Toolbar>
+      {valid ? null : <span style={{ color: '#ff3d3a' }}> ({error})</span>}
+      {Boolean(format) && (
+        <Toolbar noGutter>
+          <ToolbarGroup>
+            <FlatButton label="Format" onClick={() => onChange(format(value))} />
+          </ToolbarGroup>
+        </Toolbar>
+      )}
       <ControlledCodeMirror
         label={label}
-        value={toString(value || defaultValue)}
-        options={{ ...defaultOptions, mode }}
+        value={stringify(value || defaultValue)}
+        options={{ mode, lineNumbers: true, lineWrapping: true }}
         onBeforeChange={(editor, data, valueFromEditor) => {
           onChange(parse(valueFromEditor))
         }}
@@ -41,22 +43,19 @@ const CodeMirrorCore = props => {
     </div>
   )
 }
-
+const valueType = PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object])
 CodeMirrorCore.propTypes = {
   input: PropTypes.shape({
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object]),
+    value: valueType,
     onChange: PropTypes.func
   }),
   meta: PropTypes.shape({
     valid: PropTypes.bool,
     error: PropTypes.string
   }),
-  source: PropTypes.string,
   record: PropTypes.object,
-  type: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  defaultValue: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(editorTypes)).isRequired,
+  label: PropTypes.node.isRequired,
+  defaultValue: valueType,
   required: PropTypes.bool
 }
-
-export { CodeMirrorCore }

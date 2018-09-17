@@ -1,12 +1,15 @@
 import sqlFormatter from 'sql-formatter'
 import formatHtml from 'pretty'
 
+const parse = value => value
+const stringify = value => (value ?? '').toString()
+
 export const editorTypes = {
   sql: {
     mode: 'text/x-sql',
     format: value => sqlFormatter.format(value),
-    parse: value => value,
-    toString: value => (value || '').toString()
+    parse,
+    stringify
   },
   json: {
     mode: 'application/json',
@@ -16,23 +19,23 @@ export const editorTypes = {
           return JSON.stringify(JSON.parse(value), null, 2)
         }
         return JSON.stringify(value, null, 2)
-      } catch (e) {
+      } catch {
         return value
       }
     },
     parse: value => {
       try {
         if (typeof value === 'string') return JSON.parse(value)
-      } catch (e) {
+      } catch {
         return value
       }
     },
-    toString: value => {
+    stringify: value => {
       if (value) {
         if (typeof value === 'string') return value
         try {
           return JSON.stringify(value, null, 2)
-        } catch (e) {
+        } catch {
           return value
         }
       }
@@ -42,7 +45,7 @@ export const editorTypes = {
   html: {
     mode: 'text/html',
     format: value => formatHtml(value),
-    parse: value => value,
-    toString: value => (value || '').toString()
+    parse,
+    stringify
   }
 }

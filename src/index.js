@@ -1,2 +1,2 @@
-export { CodeMirror } from './CodeMirror'
-export { validJson } from './validJson'
+export * from './CodeMirror'
+export * from './validJson'

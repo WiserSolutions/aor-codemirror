@@ -1,6 +1,11 @@
 {
-  "extends": "@wisersolutions/eslint-config/quadro",
-  "rules": {
-    "no-console": "off"
-  }
+  "extends": "@wisersolutions",
+  "overrides": [
+    {
+      "files": ["src/**/*.test.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
