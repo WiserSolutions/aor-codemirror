@@ -20,5 +20,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run lint
-      - run: npm test
+      - type: shell
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter \
+          && chmod +x ./cc-test-reporter \
+          && ./cc-test-reporter before-build \
+          && npm test \
+          && ./cc-test-reporter after-build --exit-code $?
+        environment:
+          TERM: dumb
+          CC_TEST_REPORTER_ID: c22e29c8e7536c6240e70e9b1a7304753d45eea9e9803be7989c77ab0884f0d6
       - run: npm run build

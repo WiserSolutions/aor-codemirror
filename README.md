@@ -1,5 +1,9 @@
 # Admin on Rest - CodeMirror
 
+[![CircleCI](https://circleci.com/gh/WisePricer/aor-codemirror.svg?style=svg&circle-token=d8324b2c596c0982d37077984e2c6840b2ef2154)](https://circleci.com/gh/WisePricer/aor-codemirror)
+[![Maintainability](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/maintainability)](https://codeclimate.com/github/WisePricer/aor-codemirror/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/test_coverage)](https://codeclimate.com/github/WisePricer/aor-codemirror/test_coverage)
+
 Wrapper around [CodeMirror](https://codemirror.net) for [admin-on-rest](https://marmelab.com/admin-on-rest/).
 
 Supported formats:
