@@ -46,6 +46,7 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@wisersolutions/eslint-config": "^1.0.3",
     "@wisersolutions/eslint-formatter-idea": "^1.0.2",
     "admin-on-rest": "~1.4.1",
