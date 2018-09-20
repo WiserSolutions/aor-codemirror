@@ -1,6 +1,6 @@
 # Admin on Rest - CodeMirror
 
-[![CircleCI](https://circleci.com/gh/WisePricer/aor-codemirror.svg?style=svg&circle-token=d8324b2c596c0982d37077984e2c6840b2ef2154)](https://circleci.com/gh/WisePricer/aor-codemirror)
+[![CircleCI](https://circleci.com/gh/WisePricer/aor-codemirror.svg?style=svg&circle-token=d8324b2c596c0982d37077984e2c6840b2ef2154)](https://circleci.com/gh/WiserSolutions/aor-codemirror)
 [![Maintainability](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/maintainability)](https://codeclimate.com/github/WisePricer/aor-codemirror/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/test_coverage)](https://codeclimate.com/github/WisePricer/aor-codemirror/test_coverage)
 
@@ -14,7 +14,7 @@ Supported formats:
 
 ### Install
 
-Install using npm: `npm install aor-codemirror`
+Install using npm: `npm install @wisersolutions/aor-codemirror`
 
 ## Usage
 
@@ -22,7 +22,7 @@ Install using npm: `npm install aor-codemirror`
 
 We should to turn on validation for JSON.
 
-```js
+```jsx harmony
 import { CodeMirror, validJson } from 'aor-codemirror'
 
 <CodeEditor label="My Label" name="fieldName" type="json" defaultValue="{}" required validate={validJson} />
@@ -32,7 +32,7 @@ import { CodeMirror, validJson } from 'aor-codemirror'
 
 #### SQL editor
 
-```js
+```jsx harmony
 import { CodeMirror } from 'aor-codemirror'
 
 <CodeMirror label="My Label" name="fieldName"  type="sql" required />
@@ -40,7 +40,7 @@ import { CodeMirror } from 'aor-codemirror'
 
 #### HTML editor
 
-```js
+```jsx harmony
 import { required } from 'admin-on-rest'
 import { CodeMirror } from 'aor-codemirror'
 
