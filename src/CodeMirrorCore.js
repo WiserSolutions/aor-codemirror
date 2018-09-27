@@ -10,12 +10,12 @@ import 'codemirror/mode/sql/sql'
 import 'codemirror/mode/javascript/javascript'
 
 export const CodeMirrorCore = ({
-  input: { value, onChange },
+  input: { value, onChange = () => {} } = {},
   meta: { valid, error },
   type,
   label,
   defaultValue = '',
-  required
+  required = false
 }) => {
   const { mode, format, parse, stringify } = editorTypes[type]
   return (
@@ -50,10 +50,9 @@ CodeMirrorCore.propTypes = {
     onChange: PropTypes.func
   }),
   meta: PropTypes.shape({
-    valid: PropTypes.bool,
+    valid: PropTypes.bool.isRequired,
     error: PropTypes.string
-  }),
-  record: PropTypes.object,
+  }).isRequired,
   type: PropTypes.oneOf(Object.keys(editorTypes)).isRequired,
   label: PropTypes.node.isRequired,
   defaultValue: valueType,

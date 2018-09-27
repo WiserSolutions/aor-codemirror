@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@wisersolutions/eslint-config": "^1.0.3",
+    "@wisersolutions/eslint-config": "^1.0.4",
     "@wisersolutions/eslint-formatter-idea": "^1.0.2",
     "@wisersolutions/transpile-js": "^0.0.4",
     "@wisersolutions/test-js": "^0.0.2",
