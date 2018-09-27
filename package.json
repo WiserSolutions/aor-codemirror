@@ -1,6 +1,6 @@
 {
   "name": "@wisersolutions/aor-codemirror",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CodeMirror wrapper for Admin On Rest",
   "main": "./lib/index.js",
   "module": "./es/index.js",
