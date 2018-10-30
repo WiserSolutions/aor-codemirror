@@ -16,9 +16,10 @@ exports[`CodeMirrorCore renders controlled 1`] = `
     disableGutters={true}
   >
     <WithStyles(Button)
-      label="Format"
       onClick={[Function]}
-    />
+    >
+      Format
+    </WithStyles(Button)>
   </WithStyles(Toolbar)>
   <Controlled
     label="Field Label"
@@ -51,9 +52,10 @@ exports[`CodeMirrorCore renders with defaults 1`] = `
     disableGutters={true}
   >
     <WithStyles(Button)
-      label="Format"
       onClick={[Function]}
-    />
+    >
+      Format
+    </WithStyles(Button)>
   </WithStyles(Toolbar)>
   <Controlled
     label="Field Label"
