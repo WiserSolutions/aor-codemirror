@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/maintainability)](https://codeclimate.com/github/WisePricer/aor-codemirror/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/caf521533ef41d49142c/test_coverage)](https://codeclimate.com/github/WisePricer/aor-codemirror/test_coverage)
 
-Wrapper around [CodeMirror](https://codemirror.net) for [admin-on-rest](https://marmelab.com/admin-on-rest/).
+Wrapper around [CodeMirror](https://codemirror.net) for [react-admin](https://marmelab.com/react-admin/).
 
 Supported formats:
 
@@ -41,7 +41,7 @@ import { CodeMirror } from 'aor-codemirror'
 #### HTML editor
 
 ```jsx harmony
-import { required } from 'admin-on-rest'
+import { required } from 'react-admin'
 import { CodeMirror } from 'aor-codemirror'
 
 <CodeMirror label="My Label" name="fieldName" type="html" required validate={required} />

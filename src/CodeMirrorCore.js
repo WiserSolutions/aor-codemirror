@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Controlled as ControlledCodeMirror } from 'react-codemirror2'
-import { FlatButton, Toolbar, ToolbarGroup } from 'material-ui'
+import { Button, Toolbar } from '@material-ui/core'
 import { editorTypes } from './editorTypes'
 
 import 'codemirror/lib/codemirror.css'
@@ -26,10 +26,8 @@ export const CodeMirrorCore = ({
       </span>
       {valid ? null : <span style={{ color: '#ff3d3a' }}> ({error})</span>}
       {Boolean(format) && (
-        <Toolbar noGutter>
-          <ToolbarGroup>
-            <FlatButton label="Format" onClick={() => onChange(format(value))} />
-          </ToolbarGroup>
+        <Toolbar disableGutters>
+          <Button label="Format" onClick={() => onChange(format(value))} />
         </Toolbar>
       )}
       <ControlledCodeMirror
