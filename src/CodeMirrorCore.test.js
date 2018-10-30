@@ -1,4 +1,6 @@
 import { CodeMirrorCore } from './CodeMirrorCore'
+import { Controlled } from 'react-codemirror2'
+import { Button } from '@material-ui/core'
 
 const defaultProps = {
   label: 'Field Label',
@@ -24,7 +26,7 @@ describe('CodeMirrorCore', () => {
     expect(wrapper).toMatchSnapshot()
 
     const newValue = 'new value'
-    wrapper.find('Controlled').simulate('beforeChange', null, null, newValue)
+    wrapper.find(Controlled).simulate('beforeChange', null, null, newValue)
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(newValue)
   })
@@ -33,7 +35,7 @@ describe('CodeMirrorCore', () => {
     const onChange = jest.fn()
     const wrapper = shallow(<CodeMirrorCore {...defaultProps} input={{ value: '{"foo":"bar"}', onChange }} />)
 
-    wrapper.find('FlatButton').simulate('click')
+    wrapper.find(Button).simulate('click')
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(`{
   "foo": "bar"

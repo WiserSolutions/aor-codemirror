@@ -12,29 +12,14 @@ exports[`CodeMirrorCore renders controlled 1`] = `
     Field Label
      
   </span>
-  <Toolbar
-    noGutter={true}
+  <WithStyles(Toolbar)
+    disableGutters={true}
   >
-    <ToolbarGroup
-      firstChild={false}
-      lastChild={false}
-    >
-      <FlatButton
-        disabled={false}
-        fullWidth={false}
-        label="Format"
-        labelPosition="after"
-        labelStyle={Object {}}
-        onClick={[Function]}
-        onKeyboardFocus={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchStart={[Function]}
-        primary={false}
-        secondary={false}
-      />
-    </ToolbarGroup>
-  </Toolbar>
+    <WithStyles(Button)
+      label="Format"
+      onClick={[Function]}
+    />
+  </WithStyles(Toolbar)>
   <Controlled
     label="Field Label"
     onBeforeChange={[Function]}
@@ -62,29 +47,14 @@ exports[`CodeMirrorCore renders with defaults 1`] = `
     Field Label
      
   </span>
-  <Toolbar
-    noGutter={true}
+  <WithStyles(Toolbar)
+    disableGutters={true}
   >
-    <ToolbarGroup
-      firstChild={false}
-      lastChild={false}
-    >
-      <FlatButton
-        disabled={false}
-        fullWidth={false}
-        label="Format"
-        labelPosition="after"
-        labelStyle={Object {}}
-        onClick={[Function]}
-        onKeyboardFocus={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchStart={[Function]}
-        primary={false}
-        secondary={false}
-      />
-    </ToolbarGroup>
-  </Toolbar>
+    <WithStyles(Button)
+      label="Format"
+      onClick={[Function]}
+    />
+  </WithStyles(Toolbar)>
   <Controlled
     label="Field Label"
     onBeforeChange={[Function]}
