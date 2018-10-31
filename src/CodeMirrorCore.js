@@ -27,7 +27,7 @@ export const CodeMirrorCore = ({
       {valid ? null : <span style={{ color: '#ff3d3a' }}> ({error})</span>}
       {Boolean(format) && (
         <Toolbar disableGutters>
-          <Button label="Format" onClick={() => onChange(format(value))} />
+          <Button onClick={() => onChange(format(value))}>Format</Button>
         </Toolbar>
       )}
       <ControlledCodeMirror
