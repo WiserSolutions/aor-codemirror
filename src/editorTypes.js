@@ -1,5 +1,6 @@
 import sqlFormatter from 'sql-formatter'
 import formatHtml from 'pretty'
+import beautify from 'js-beautify'
 
 const parse = value => value
 const stringify = value => (value ?? '').toString()
@@ -45,6 +46,12 @@ export const editorTypes = {
   html: {
     mode: 'text/html',
     format: value => formatHtml(value),
+    parse,
+    stringify
+  },
+  javascript: {
+    mode: 'javascript',
+    format: value => beautify(value, { indent_size: 2, space_in_empty_paren: true }),
     parse,
     stringify
   }
