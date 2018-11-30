@@ -11,12 +11,15 @@ Supported formats:
 * html
 * json
 * sql
+* javascript
 
 ### Install
 
 Install using npm: `npm install @wisersolutions/aor-codemirror`
 
 ## Usage
+
+The prop `name` will be mapped to `source` for react-admin.
 
 #### JSON editor
 
@@ -45,4 +48,12 @@ import { required } from 'react-admin'
 import { CodeMirror } from 'aor-codemirror'
 
 <CodeMirror label="My Label" name="fieldName" type="html" required validate={required} />
+```
+#### Javascript editor
+
+```jsx harmony
+import { required } from 'react-admin'
+import { CodeMirror } from 'aor-codemirror'
+
+<CodeMirror label="My Label" name="fieldName" type="javascript" required validate={required} />
 ```
