@@ -1,6 +1,6 @@
 import { editorTypes } from './editorTypes'
 
-const { sql, json, html } = editorTypes
+const { sql, json, html, javascript } = editorTypes
 
 describe('editorTypes', async () => {
   describe('json', async () => {
@@ -58,6 +58,26 @@ WHERE
     it('#stringify keeps HTML the same', () => {
       const htmlString = '<html>a</html>'
       expect(html.stringify(htmlString)).toEqual(htmlString)
+    })
+  })
+
+  describe('javascript', async () => {
+    const code = 'const hello = () => ({ foo: () => { console.log("bar") }})'
+    it('#format formats javascript', () => {
+      expect(javascript.format(code)).toEqual(
+        `const hello = () => ({
+  foo: () => {
+    console.log("bar")
+  }
+})`)
+    })
+
+    it('#parse parses javascript string into string', () => {
+      expect(javascript.parse(code)).toEqual(code)
+    })
+
+    it('#stringify returns a string representation of the javascript code', () => {
+      expect(javascript.stringify(code)).toEqual(code)
     })
   })
 })
