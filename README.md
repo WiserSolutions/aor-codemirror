@@ -28,7 +28,7 @@ We should to turn on validation for JSON.
 ```jsx harmony
 import { CodeMirror, validJson } from 'aor-codemirror'
 
-<CodeEditor label="My Label" name="fieldName" type="json" defaultValue="{}" required validate={validJson} />
+<CodeMirror label="My Label" name="fieldName" type="json" defaultValue="{}" required validate={validJson} />
 ```
 
 > Output from the CodeMirrror will be JSON object (not string);
