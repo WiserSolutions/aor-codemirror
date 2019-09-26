@@ -1,6 +1,6 @@
 {
   "name": "@wisersolutions/aor-codemirror",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "CodeMirror wrapper for react-admin",
   "main": "./lib/index.js",
   "module": "./es/index.js",
