@@ -4,7 +4,7 @@
   "description": "CodeMirror wrapper for react-admin",
   "main": "./lib/index.js",
   "module": "./es/index.js",
-  "repository": "https://github.com/WisePricer/aor-codemirror",
+  "repository": "https://github.com/WiserSolutions/aor-codemirror",
   "keywords": [
     "react-admin",
     "codemirror"
