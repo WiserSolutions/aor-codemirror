@@ -1,8 +1,8 @@
 import { validJson } from './validJson'
 
-describe('validJson', async () => {
+describe('validJson', () => {
   it('returns `undefined` for a valid JSON string', () => {
-    expect(validJson('{"valid": "json"}')).toEqual(undefined)
+    expect(validJson('{"valid": "json"}')).toBeUndefined()
   })
 
   it('returns an error message for invalid JSON string', () => {

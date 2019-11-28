@@ -12,15 +12,15 @@ exports[`CodeMirrorCore renders controlled 1`] = `
     Field Label
      
   </span>
-  <WithStyles(Toolbar)
+  <WithStyles(ForwardRef(Toolbar))
     disableGutters={true}
   >
-    <WithStyles(Button)
+    <WithStyles(ForwardRef(Button))
       onClick={[Function]}
     >
       Format
-    </WithStyles(Button)>
-  </WithStyles(Toolbar)>
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(Toolbar))>
   <Controlled
     label="Field Label"
     onBeforeChange={[Function]}
@@ -48,15 +48,62 @@ exports[`CodeMirrorCore renders with defaults 1`] = `
     Field Label
      
   </span>
-  <WithStyles(Toolbar)
+  <WithStyles(ForwardRef(Toolbar))
     disableGutters={true}
   >
-    <WithStyles(Button)
+    <WithStyles(ForwardRef(Button))
       onClick={[Function]}
     >
       Format
-    </WithStyles(Button)>
-  </WithStyles(Toolbar)>
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(Toolbar))>
+  <Controlled
+    label="Field Label"
+    onBeforeChange={[Function]}
+    options={
+      Object {
+        "lineNumbers": true,
+        "lineWrapping": true,
+        "mode": "application/json",
+      }
+    }
+    value=""
+  />
+</div>
+`;
+
+exports[`CodeMirrorCore renders with errors 1`] = `
+<div>
+  <span
+    style={
+      Object {
+        "color": "#c4c4c4",
+      }
+    }
+  >
+    Field Label
+     
+  </span>
+  <span
+    style={
+      Object {
+        "color": "#ff3d3a",
+      }
+    }
+  >
+     (
+    Field error!
+    )
+  </span>
+  <WithStyles(ForwardRef(Toolbar))
+    disableGutters={true}
+  >
+    <WithStyles(ForwardRef(Button))
+      onClick={[Function]}
+    >
+      Format
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(Toolbar))>
   <Controlled
     label="Field Label"
     onBeforeChange={[Function]}

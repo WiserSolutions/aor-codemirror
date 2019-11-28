@@ -16,7 +16,7 @@ describe('CodeMirrorCore', () => {
   })
 
   it('renders with errors', () => {
-    expect(shallow(<CodeMirrorCore {...defaultProps} meta={{ valid: false, error: 'Field error!' }} />))
+    expect(shallow(<CodeMirrorCore {...defaultProps} meta={{ valid: false, error: 'Field error!' }} />)).toMatchSnapshot()
   })
 
   it('renders controlled', () => {

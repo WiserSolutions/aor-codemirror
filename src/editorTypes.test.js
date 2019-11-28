@@ -2,8 +2,8 @@ import { editorTypes } from './editorTypes'
 
 const { sql, json, html, javascript } = editorTypes
 
-describe('editorTypes', async () => {
-  describe('json', async () => {
+describe('editorTypes', () => {
+  describe('json', () => {
     it('#format formats JSON', () => {
       expect(json.format('{"valid": "json"}')).toEqual(`{
   "valid": "json"
@@ -21,7 +21,7 @@ describe('editorTypes', async () => {
     })
   })
 
-  describe('sql', async () => {
+  describe('sql', () => {
     it('#format formats SQL', () => {
       expect(sql.format('SELECT * FROM TestTable WHERE 1=1')).toEqual(`SELECT
   *
@@ -42,7 +42,7 @@ WHERE
     })
   })
 
-  describe('html', async () => {
+  describe('html', () => {
     it('#format formats HTML', () => {
       expect(html.format('<html  attribute = "value"> <div> hi </div>  </html>')).toEqual(`<html attribute="value">
   <div> hi </div>
@@ -61,7 +61,7 @@ WHERE
     })
   })
 
-  describe('javascript', async () => {
+  describe('javascript', () => {
     const code = 'const hello = () => ({ foo: () => { console.log("bar") }})'
     it('#format formats javascript', () => {
       expect(javascript.format(code)).toEqual(
@@ -69,7 +69,8 @@ WHERE
   foo: () => {
     console.log("bar")
   }
-})`)
+})`
+      )
     })
 
     it('#parse parses javascript string into string', () => {
